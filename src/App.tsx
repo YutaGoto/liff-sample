@@ -9,15 +9,16 @@ function App() {
       .then(() => {
         if (!liff.isLoggedIn()) {
           liff.login({})
-        }
-        liff.sendMessages([{
+        } else if (liff.isInClient()) {
+          liff.sendMessages([{
             'type': 'text',
             'text': "You've successfully sent a message! Hooray!"
-        }]).then(function() {
+          }]).then(function() {
             window.alert('Message sent');
-        }).catch(function(error) {
+          }).catch(function(error) {
             window.alert('Error sending message: ' + error);
-        });
+          });
+        }
       })
   }
 
