@@ -29,7 +29,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <button className="button" onClick={sendMessage}>button</button>
+        <button className="button" onClick={sendMessage}>send message</button>
         <a
           className="App-link"
           href="https://reactjs.org"
