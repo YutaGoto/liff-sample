@@ -32,7 +32,7 @@ function App() {
             .then(profile => {
               const userId: string = profile.userId
               const displayName: string = profile.displayName
-              alert(`Nane: ${displayName}, userId: ${userId}`)
+              alert(`Name: ${displayName}, userId: ${userId}`)
             }).catch(function(error) {
               window.alert('Error sending message: ' + error);
             });
