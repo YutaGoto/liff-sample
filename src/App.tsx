@@ -41,6 +41,16 @@ function App() {
 
   }
 
+  const logout = () => {
+    liff.init({liffId: process.env.REACT_APP_LIFF_ID as string})
+      .then(() => {
+        if (!liff.isLoggedIn()) {
+          liff.logout()
+        }
+      })
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -50,6 +60,7 @@ function App() {
         </p>
         <button className="button" onClick={sendMessage}>send message</button>
         <button className="button" onClick={getUserInfo}>show user info</button>
+        <button className="button" onClick={logout}>logout</button>
         <a
           className="App-link"
           href="https://reactjs.org"
