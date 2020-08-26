@@ -44,7 +44,7 @@ function App() {
   const logout = () => {
     liff.init({liffId: process.env.REACT_APP_LIFF_ID as string})
       .then(() => {
-        if (!liff.isLoggedIn()) {
+        if (liff.isLoggedIn()) {
           liff.logout()
         }
       })
